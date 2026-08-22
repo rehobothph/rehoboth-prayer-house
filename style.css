@@ -1936,3 +1936,251 @@ a {
     }
 
 }
+/* =====================================================
+   NEW CHURCH SECTIONS
+===================================================== */
+
+.special-card {
+    border-top: 3px solid #c98a45;
+}
+
+.online-section {
+    padding: 95px 0;
+    background:
+        linear-gradient(
+            135deg,
+            #0d3538,
+            #185657
+        );
+    color: white;
+}
+
+.online-card {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    padding: 60px 30px;
+    border-radius: 28px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.22);
+}
+
+.online-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.online-label {
+    color: #e2b16a;
+    font-size: .8rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.online-card h2 {
+    font-size: clamp(1.8rem,4vw,2.8rem);
+    margin: 10px 0;
+}
+
+.online-time {
+    color: #e2b16a;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.online-description {
+    max-width: 650px;
+    margin: 20px auto 30px;
+    color: #d4dfdf;
+}
+
+.online-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.online-btn {
+    display: inline-block;
+    padding: 13px 24px;
+    border-radius: 50px;
+    color: white;
+    background: #bd813d;
+    font-weight: 750;
+    transition: .3s;
+}
+
+.online-btn:hover {
+    transform: translateY(-4px);
+    background: #dca25d;
+}
+
+.whatsapp-btn {
+    background: #25d366;
+}
+
+.prayer-request-section {
+    padding: 95px 0;
+    background:
+        linear-gradient(
+            145deg,
+            #f7f4ed,
+            #edf3f1
+        );
+}
+
+.prayer-title {
+    margin-bottom: 35px;
+}
+
+.prayer-request-card {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    padding: 55px 30px;
+    background: white;
+    border-radius: 28px;
+    border: 1px solid #e5e8e4;
+    box-shadow: 0 20px 55px rgba(20,50,50,.09);
+}
+
+.prayer-request-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.prayer-request-card h2 {
+    color: #173f43;
+    margin-bottom: 12px;
+}
+
+.prayer-request-card > p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: #697777;
+}
+
+.request-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.request-btn {
+    display: inline-block;
+    padding: 14px 20px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 750;
+    transition: .3s;
+}
+
+.request-btn:hover {
+    transform: translateY(-4px);
+}
+
+.whatsapp-request {
+    background: #25d366;
+}
+
+.sms-request {
+    background: #bd813d;
+}
+
+.call-request {
+    background: #173f43;
+}
+
+.private-note {
+    margin-top: 25px;
+    color: #7a8585;
+    font-size: .9rem;
+}
+
+.email-section {
+    padding: 55px 0;
+    background: #e9efec;
+}
+
+.email-card {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 30px;
+    border-radius: 22px;
+    background: white;
+    box-shadow: 0 12px 35px rgba(20,50,50,.07);
+}
+
+.email-icon {
+    width: 65px;
+    height: 65px;
+    flex: 0 0 65px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #173f43;
+    font-size: 1.7rem;
+}
+
+.email-card span {
+    color: #bd813d;
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.email-card h2 {
+    color: #173f43;
+    margin: 3px 0;
+}
+
+.email-card p {
+    color: #6c7979;
+}
+
+.email-btn {
+    margin-left: auto;
+    padding: 13px 22px;
+    color: white;
+    background: #bd813d;
+    border-radius: 50px;
+    font-weight: 750;
+    white-space: nowrap;
+}
+
+@media (max-width: 650px) {
+
+    .online-card {
+        padding: 45px 20px;
+    }
+
+    .online-buttons {
+        flex-direction: column;
+    }
+
+    .online-btn {
+        width: 100%;
+    }
+
+    .request-buttons {
+        flex-direction: column;
+    }
+
+    .request-btn {
+        width: 100%;
+    }
+
+    .email-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .email-btn {
+        margin-left: 0;
+    }
+
+}
