@@ -1,6 +1,6 @@
-/* =========================
+/* =====================================================
    RESET
-========================= */
+===================================================== */
 
 * {
     margin: 0;
@@ -8,25 +8,39 @@
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    color: #263238;
-    background: #faf9f6;
+    font-family:
+        "Noto Sans Kannada",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: #293638;
+
+    background: #f8f7f3;
+
     line-height: 1.7;
+
+    overflow-x: hidden;
 }
+
 
 img {
     max-width: 100%;
     display: block;
 }
 
+
 a {
     text-decoration: none;
 }
+
 
 .container {
     width: min(1120px, 92%);
@@ -34,692 +48,1891 @@ a {
 }
 
 
-/* =========================
+
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 .header {
+
     position: sticky;
+
     top: 0;
+
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.97);
-    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
+
+    background:
+        rgba(255,255,255,0.97);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 4px 25px
+        rgba(0,0,0,0.08);
 }
 
+
 .navbar {
+
     min-height: 82px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     gap: 25px;
 }
 
+
 .brand {
+
     display: flex;
+
     align-items: center;
-    gap: 13px;
+
+    gap: 12px;
+
     color: #173f43;
 }
 
+
 .brand img {
-    width: 60px;
-    height: 60px;
+
+    width: 62px;
+
+    height: 62px;
+
     object-fit: cover;
+
     border-radius: 50%;
+
+    border: 2px solid #d2a15d;
+
+    background: white;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.12);
 }
 
-.brand h2 {
+
+.brand-info {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.brand-info strong {
+
     font-size: 1.05rem;
+
     line-height: 1.2;
 }
 
-.brand span {
+
+.brand-info span {
+
+    color: #7a8585;
+
     font-size: 0.78rem;
-    color: #777;
 }
 
-nav {
+
+.navigation {
+
     display: flex;
+
     align-items: center;
-    gap: 25px;
+
+    justify-content: center;
+
+    gap: 22px;
 }
 
-nav a {
+
+.navigation a {
+
     color: #29484b;
-    font-weight: 600;
-    font-size: 0.95rem;
+
+    font-size: 0.9rem;
+
+    font-weight: 650;
+
     transition: 0.3s;
 }
 
-nav a:hover {
-    color: #c58b45;
+
+.navigation a:hover {
+
+    color: #bd813d;
+
 }
 
 
-/* =========================
+
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero {
-    min-height: 650px;
+
+    min-height: 720px;
+
     position: relative;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     text-align: center;
+
+    color: white;
+
+    overflow: hidden;
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(8,37,40,0.94),
+            rgba(17,69,70,0.86)
+        ),
+
+        url("logo.jpg")
+        center/cover
+        no-repeat;
+}
+
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(225,175,101,0.16),
+            transparent 38%
+        );
+
+    pointer-events: none;
+}
+
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
 
     background:
         linear-gradient(
-            rgba(10, 42, 45, 0.78),
-            rgba(10, 42, 45, 0.82)
-        ),
-        url("logo.jpg") center/cover no-repeat;
-
-    color: white;
+            to bottom,
+            transparent,
+            rgba(5,25,27,0.35)
+        );
 }
+
 
 .hero-content {
+
     position: relative;
+
     z-index: 2;
-    width: min(850px, 92%);
+
+    width: min(900px,92%);
+
+    animation:
+        heroFade 1.2s ease;
 }
 
-.small-title {
-    color: #e6b66c;
-    font-size: 0.95rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
+
+@keyframes heroFade {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
 }
+
+
+.hero-logo {
+
+    width: 120px;
+
+    height: 120px;
+
+    margin: 0 auto 25px;
+
+    border-radius: 50%;
+
+    padding: 5px;
+
+    background:
+        rgba(255,255,255,0.95);
+
+    box-shadow:
+        0 12px 45px
+        rgba(0,0,0,0.25);
+}
+
+
+.hero-logo img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+
+.hero-label {
+
+    color: #e4b66c;
+
+    font-size: 0.82rem;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 18px;
+}
+
 
 .hero h1 {
-    font-size: clamp(2.4rem, 6vw, 4.8rem);
+
+    font-size:
+        clamp(2.4rem, 6vw, 5rem);
+
     line-height: 1.15;
-    margin-bottom: 25px;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 4px 20px
+        rgba(0,0,0,0.3);
 }
 
-.hero-description {
-    font-size: 1.2rem;
-    color: #f1f1f1;
+
+.hero-subtitle {
+
+    color: #e8eeee;
+
+    font-size: 1.15rem;
+
+    letter-spacing: 1px;
 }
+
 
 .hero-buttons {
-    margin-top: 35px;
+
     display: flex;
+
     justify-content: center;
-    gap: 15px;
+
     flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 35px;
 }
 
 
-/* =========================
-   BUTTON
-========================= */
+/* =====================================================
+   BUTTONS
+===================================================== */
 
 .btn {
+
     display: inline-block;
-    padding: 13px 27px;
+
+    padding: 14px 28px;
+
     border-radius: 50px;
-    font-weight: 700;
-    transition: 0.3s;
+
+    font-weight: 750;
+
+    transition:
+        0.3s ease;
+
 }
 
-.primary {
+
+.btn-gold {
+
     color: white;
-    background: #c78a43;
-    box-shadow: 0 7px 20px rgba(199, 138, 67, 0.3);
-}
 
-.primary:hover {
-    background: #aa7132;
-    transform: translateY(-3px);
-}
-
-.secondary {
-    color: white;
-    border: 1px solid white;
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.secondary:hover {
-    background: white;
-    color: #173f43;
-    transform: translateY(-3px);
-}
-
-
-/* =========================
-   SECTIONS
-========================= */
-
-.section {
-    padding: 90px 0;
-}
-
-.light {
-    background: #f1f5f3;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.section-title > span {
-    color: #c78a43;
-    font-size: 0.8rem;
-    font-weight: 800;
-    letter-spacing: 3px;
-}
-
-.section-title h2 {
-    color: #173f43;
-    font-size: clamp(1.8rem, 4vw, 2.7rem);
-    margin: 8px 0 12px;
-}
-
-.section-title p {
-    color: #697477;
-}
-
-.line {
-    width: 65px;
-    height: 3px;
-    background: #c78a43;
-    margin: auto;
-}
-
-
-/* =========================
-   ABOUT
-========================= */
-
-.about {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.about-text p {
-    margin-bottom: 18px;
-    color: #5d686b;
-    font-size: 1.05rem;
-}
-
-.about-text h3 {
-    color: #173f43;
-    margin-top: 25px;
-    letter-spacing: 2px;
-}
-
-.about-card {
-    padding: 45px 30px;
-    text-align: center;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
-    border-top: 4px solid #c78a43;
-}
-
-.cross {
-    font-size: 3rem;
-    color: #c78a43;
-}
-
-.about-card h3 {
-    color: #173f43;
-    font-size: 1.7rem;
-    margin: 10px 0;
-}
-
-.about-card p {
-    color: #777;
-    margin-bottom: 20px;
-}
-
-.about-card strong {
-    color: #c78a43;
-    letter-spacing: 3px;
-}
-
-
-/* =========================
-   SERVICE CARDS
-========================= */
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.service-card {
-    background: white;
-    text-align: center;
-    padding: 40px 25px;
-    border-radius: 18px;
-    border: 1px solid #e4ebe8;
-    transition: 0.3s;
-}
-
-.service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-}
-
-.service-card.featured {
-    background: #173f43;
-    color: white;
-    transform: translateY(-8px);
-}
-
-.service-card.featured h3,
-.service-card.featured strong {
-    color: white;
-}
-
-.service-card.featured p {
-    color: #d4dfdd;
-}
-
-.icon {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-
-.service-card h3 {
-    color: #173f43;
-    margin-bottom: 8px;
-}
-
-.service-card p {
-    color: #7a8586;
-    margin-bottom: 8px;
-}
-
-.service-card strong {
-    color: #c78a43;
-    font-size: 1.1rem;
-}
-
-
-/* =========================
-   VERSE
-========================= */
-
-.verse {
     background:
         linear-gradient(
             135deg,
-            #123b3e,
-            #1e5657
+            #c98c45,
+            #a96e30
         );
+
+    box-shadow:
+        0 8px 25px
+        rgba(190,126,55,0.35);
+}
+
+
+.btn-gold:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(190,126,55,0.45);
+}
+
+
+.btn-outline {
+
     color: white;
-    padding: 80px 0;
-    text-align: center;
-}
 
-.verse-box {
-    max-width: 800px;
-    margin: auto;
-}
+    border:
+        1px solid
+        rgba(255,255,255,0.75);
 
-.quote {
-    font-size: 5rem;
-    color: #d3a15f;
-    height: 55px;
-}
+    background:
+        rgba(255,255,255,0.06);
 
-.verse h2 {
-    font-size: clamp(1.5rem, 4vw, 2.3rem);
-    font-weight: 500;
-    margin: 15px 0;
-}
-
-.verse p {
-    color: #e4b66e;
-    font-weight: 700;
+    backdrop-filter:
+        blur(5px);
 }
 
 
-/* =========================
-   PASTOR
-========================= */
+.btn-outline:hover {
 
-.pastor {
-    max-width: 850px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    gap: 35px;
+    color: #173f43;
+
     background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+
+    transform:
+        translateY(-4px);
 }
 
-.pastor-icon {
-    min-width: 120px;
-    height: 120px;
-    border-radius: 50%;
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.section {
+
+    padding:
+        95px 0;
+
+    background: #faf9f6;
+}
+
+
+.section-light {
+
+    background:
+        #f0f4f2;
+}
+
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+
+.section-title span {
+
+    color: #bd803d;
+
+    font-size: 0.78rem;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+
+.section-title h2 {
+
+    color: #173f43;
+
+    font-size:
+        clamp(1.8rem,4vw,2.8rem);
+
+    line-height: 1.3;
+
+    margin:
+        8px 0 15px;
+}
+
+
+.section-title p {
+
+    color: #707c7c;
+
+    margin-top: 18px;
+}
+
+
+.title-line {
+
+    width: 65px;
+
+    height: 3px;
+
+    margin: auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            #b87a38,
+            #e3b36c
+        );
+
+    border-radius: 10px;
+}
+
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about-grid {
+
     display: grid;
-    place-items: center;
-    background: #173f43;
-    color: #e1ad67;
+
+    grid-template-columns:
+        1.5fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+.about-content p {
+
+    color: #5f6d6d;
+
+    font-size: 1.05rem;
+
+    margin-bottom: 18px;
+}
+
+
+.faith-box {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+    color: #173f43;
+
+    letter-spacing: 1px;
+}
+
+
+.faith-box span {
+
+    color: #c58a45;
+}
+
+
+.est-card {
+
+    position: relative;
+
+    padding:
+        50px 30px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f2eee6
+        );
+
+    border:
+        1px solid #e8dfd0;
+
+    box-shadow:
+        0 20px 50px
+        rgba(32,45,45,0.09);
+
+    overflow: hidden;
+}
+
+
+.est-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(197,138,69,0.08);
+
+    top: -80px;
+
+    right: -70px;
+}
+
+
+.est-cross {
+
+    color: #c48943;
+
     font-size: 3rem;
 }
 
-.pastor-info > span {
-    color: #c78a43;
-    font-size: 0.8rem;
-    font-weight: 800;
-    letter-spacing: 3px;
-}
 
-.pastor-info h2 {
+.est-card h3 {
+
     color: #173f43;
-    margin: 5px 0 10px;
-}
 
-.pastor-info p {
-    color: #687476;
-}
+    font-size: 1.7rem;
 
-.phone {
-    display: inline-block;
-    margin-top: 15px;
-    color: #c07832;
-    font-weight: 700;
+    letter-spacing: 3px;
+
+    margin: 8px 0;
 }
 
 
-/* =========================
-   CONTACT
-========================= */
+.est-card p {
 
-.contact {
+    color: #777;
+
+    margin-bottom: 20px;
+}
+
+
+.est-card strong {
+
+    color: #bd803d;
+
+    letter-spacing: 4px;
+}
+
+
+.est-line {
+
+    width: 55px;
+
+    height: 2px;
+
+    margin:
+        15px auto;
+
+    background: #d5a361;
+}
+
+
+
+/* =====================================================
+   SERVICE CARDS
+===================================================== */
+
+.service-grid {
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap: 25px;
 }
 
-.contact-card {
+
+.service-card {
+
+    position: relative;
+
     text-align: center;
+
+    padding:
+        42px 25px;
+
     background: white;
-    padding: 35px 20px;
-    border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+
+    border:
+        1px solid #e4eae7;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(20,50,50,0.05);
+
+    transition:
+        0.35s ease;
 }
 
-.contact-card > div {
-    font-size: 2.2rem;
-    margin-bottom: 10px;
+
+.service-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(20,50,50,0.10);
 }
 
-.contact-card h3 {
+
+.featured-service {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            145deg,
+            #123f42,
+            #1c5959
+        );
+
+    border-color:
+        transparent;
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 18px 45px
+        rgba(17,62,65,0.2);
+}
+
+
+.service-icon {
+
+    font-size: 2.6rem;
+
+    margin-bottom: 15px;
+}
+
+
+.service-day {
+
+    display: block;
+
+    color: #bd803d;
+
+    font-size: 0.72rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 7px;
+}
+
+
+.featured-service
+.service-day {
+
+    color: #e4b76d;
+}
+
+
+.service-card h3 {
+
     color: #173f43;
+
+    margin-bottom: 7px;
+}
+
+
+.featured-service h3 {
+
+    color: white;
+}
+
+
+.service-card p {
+
+    color: #7b8585;
+
     margin-bottom: 8px;
 }
 
-.contact-card p {
-    color: #777;
-}
 
-.contact-card a {
-    color: #bd7937;
-    font-weight: 700;
-}
+.featured-service p {
 
-.map-button {
-    text-align: center;
-    margin-top: 40px;
+    color: #d2dddd;
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+.service-card strong {
 
-footer {
-    background: #102f32;
+    color: #bd803d;
+
+    font-size: 1.05rem;
+}
+
+
+.featured-service strong {
+
+    color: #e4b76d;
+}
+
+
+
+/* =====================================================
+   WORD OF GOD
+===================================================== */
+
+.word-section {
+
+    position: relative;
+
+    padding:
+        105px 0;
+
     color: white;
-    text-align: center;
-    padding: 65px 20px 30px;
+
+    overflow: hidden;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(7,35,38,0.97),
+            rgba(20,75,76,0.95)
+        );
 }
 
-.footer-logo {
-    width: 90px;
-    height: 90px;
-    object-fit: cover;
+
+.word-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+
+    height: 450px;
+
     border-radius: 50%;
-    margin: 0 auto 15px;
+
+    border:
+        1px solid
+        rgba(226,177,102,0.12);
+
+    top: -250px;
+
+    left: -150px;
 }
 
-footer h2 {
-    margin-bottom: 5px;
+
+.word-section::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(226,177,102,0.10);
+
+    bottom: -300px;
+
+    right: -180px;
 }
 
-footer p {
-    color: #b9c7c7;
+
+.word-card {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding:
+        65px 35px;
+
+    text-align: center;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.10),
+            rgba(255,255,255,0.035)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.14);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,0.25);
+
+    backdrop-filter:
+        blur(10px);
 }
 
-.motto {
-    color: #d8a25d !important;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin: 15px 0 25px;
+
+.word-label {
+
+    color: #e2b16a;
+
+    font-size: 0.8rem;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
 }
 
-.footer-links {
+
+.word-cross {
+
+    color: #e2b16a;
+
+    font-size: 3rem;
+
+    margin:
+        15px 0;
+}
+
+
+.word-card h2 {
+
+    max-width: 760px;
+
+    margin: auto;
+
+    font-size:
+        clamp(1.5rem,4vw,2.6rem);
+
+    line-height: 1.6;
+
+    font-weight: 500;
+}
+
+
+.verse-reference {
+
+    color: #e2b16a;
+
+    font-weight: 800;
+
+    margin-top: 12px;
+}
+
+
+.word-text {
+
+    max-width: 600px;
+
+    margin:
+        20px auto 30px;
+
+    color: #d2dddd;
+}
+
+
+.bible-buttons {
+
     display: flex;
+
     justify-content: center;
-    gap: 25px;
+
     flex-wrap: wrap;
+
+    gap: 15px;
 }
 
-.footer-links a {
+
+.bible-btn {
+
+    display: inline-block;
+
+    padding:
+        13px 24px;
+
+    border-radius: 50px;
+
     color: white;
-}
 
-.footer-links a:hover {
-    color: #d9a35f;
-}
+    background:
+        #c68942;
 
-footer hr {
-    border: 0;
-    border-top: 1px solid rgba(255,255,255,0.12);
-    margin: 30px 0 20px;
-}
+    font-weight: 750;
 
-.copyright {
-    font-size: 0.85rem;
-}
-
-
-/* =========================
-   WHATSAPP
-========================= */
-
-.whatsapp {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    width: 58px;
-    height: 58px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    background: #25d366;
-    color: white;
-    font-size: 1.7rem;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-    z-index: 999;
     transition: 0.3s;
 }
 
-.whatsapp:hover {
-    transform: scale(1.1);
+
+.bible-btn:hover {
+
+    transform:
+        translateY(-4px);
+
+    background:
+        #dfa25b;
 }
 
 
-/* =========================
-   TABLET
-========================= */
+.bible-secondary {
 
-@media (max-width: 900px) {
+    background:
+        transparent;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.6);
+}
+
+
+.bible-secondary:hover {
+
+    color: #173f43;
+
+    background: white;
+}
+
+
+
+/* =====================================================
+   PASTOR
+===================================================== */
+
+.pastor-card {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 40px;
+
+    padding:
+        45px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    border:
+        1px solid #e6ebe8;
+
+    box-shadow:
+        0 18px 45px
+        rgba(20,50,50,0.08);
+}
+
+
+.pastor-symbol {
+
+    flex:
+        0 0 125px;
+
+    width: 125px;
+
+    height: 125px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: #e0ae68;
+
+    font-size: 3rem;
+
+    background:
+        linear-gradient(
+            145deg,
+            #123f42,
+            #1c5b5b
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(17,61,63,0.2);
+}
+
+
+.pastor-role {
+
+    color: #bd803d;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+
+.pastor-details h2 {
+
+    color: #173f43;
+
+    font-size: 2rem;
+
+    margin:
+        5px 0 12px;
+}
+
+
+.pastor-details p {
+
+    color: #687575;
+
+    margin-bottom: 12px;
+}
+
+
+.pastor-phone {
+
+    display: inline-block;
+
+    margin-top: 8px;
+
+    color: #bd7937;
+
+    font-weight: 800;
+}
+
+
+
+/* =====================================================
+   LOCATION
+===================================================== */
+
+.location-section {
+
+    padding:
+        55px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c9904a,
+            #ad7435
+        );
+}
+
+
+.location-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    color: white;
+}
+
+
+.location-icon {
+
+    width: 75px;
+
+    height: 75px;
+
+    flex:
+        0 0 75px;
+
+    display: grid;
+
+    place-items: center;
+
+    font-size: 2rem;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.15);
+}
+
+
+.location-card span {
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.location-card h2 {
+
+    margin:
+        3px 0;
+
+    font-size: 1.7rem;
+}
+
+
+.location-card p {
+
+    opacity: 0.9;
+}
+
+
+.location-card small {
+
+    opacity: 0.75;
+}
+
+
+.location-btn {
+
+    margin-left: auto;
+
+    padding:
+        13px 23px;
+
+    color: #9b642d;
+
+    background: white;
+
+    border-radius: 50px;
+
+    font-weight: 750;
+
+    white-space: nowrap;
+
+    transition: 0.3s;
+}
+
+
+.location-btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,0.18);
+}
+
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 25px;
+}
+
+
+.contact-card {
+
+    text-align: center;
+
+    padding:
+        38px 25px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    border:
+        1px solid #e4eae7;
+
+    box-shadow:
+        0 10px 30px
+        rgba(20,50,50,0.05);
+
+    transition: 0.3s;
+}
+
+
+.contact-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(20,50,50,0.09);
+}
+
+
+.contact-icon {
+
+    font-size: 2.3rem;
+
+    margin-bottom: 10px;
+}
+
+
+.contact-card h3 {
+
+    color: #173f43;
+
+    margin-bottom: 8px;
+}
+
+
+.contact-card p {
+
+    color: #777;
+
+    margin-bottom: 10px;
+}
+
+
+.contact-card a {
+
+    color: #bd7937;
+
+    font-weight: 750;
+}
+
+
+
+/* =====================================================
+   USEFUL LINKS
+===================================================== */
+
+.links-section {
+
+    padding:
+        85px 0;
+
+    background:
+        #173f43;
+}
+
+
+.dark-title span {
+
+    color: #e2b16a;
+}
+
+
+.dark-title h2 {
+
+    color: white;
+}
+
+
+.useful-links {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap: 15px;
+}
+
+
+.useful-links a {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 90px;
+
+    text-align: center;
+
+    color: white;
+
+    padding: 15px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    border-radius: 16px;
+
+    background:
+        rgba(255,255,255,0.05);
+
+    transition: 0.3s;
+}
+
+
+.useful-links a:hover {
+
+    background:
+        rgba(255,255,255,0.12);
+
+    transform:
+        translateY(-5px);
+}
+
+
+.useful-links a:first-letter {
+
+    font-size: 1.5rem;
+}
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+
+    padding:
+        65px 20px 30px;
+
+    color: white;
+
+    text-align: center;
+
+    background:
+        #0d292c;
+}
+
+
+.footer-logo {
+
+    width: 90px;
+
+    height: 90px;
+
+    margin:
+        0 auto 18px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        2px solid #d4a05d;
+
+    background: white;
+}
+
+
+.footer h2 {
+
+    margin-bottom: 5px;
+}
+
+
+.footer p {
+
+    color: #b9c7c7;
+}
+
+
+.footer-motto {
+
+    color: #dca65e !important;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin:
+        15px 0 25px;
+}
+
+
+.footer-navigation {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+
+.footer-navigation a {
+
+    color: #d8e1e1;
+
+    transition: 0.3s;
+}
+
+
+.footer-navigation a:hover {
+
+    color: #dfa75f;
+}
+
+
+.footer-line {
+
+    max-width: 650px;
+
+    height: 1px;
+
+    margin:
+        30px auto 20px;
+
+    background:
+        rgba(255,255,255,0.12);
+}
+
+
+.copyright {
+
+    font-size: 0.82rem;
+}
+
+
+
+/* =====================================================
+   FLOATING WHATSAPP
+===================================================== */
+
+.floating-whatsapp {
+
+    position: fixed;
+
+    right: 22px;
+
+    bottom: 22px;
+
+    z-index: 999;
+
+    width: 60px;
+
+    height: 60px;
+
+    display: grid;
+
+    place-items: center;
+
+    color: white;
+
+    font-size: 1.7rem;
+
+    border-radius: 50%;
+
+    background:
+        #25d366;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,0.25);
+
+    transition: 0.3s;
+}
+
+
+.floating-whatsapp:hover {
+
+    transform:
+        scale(1.1);
+
+    box-shadow:
+        0 10px 30px
+        rgba(37,211,102,0.35);
+}
+
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
 
     .navbar {
-        flex-direction: column;
-        padding: 15px 0;
+
+        flex-direction:
+            column;
+
+        padding:
+            15px 0;
     }
 
-    nav {
-        gap: 15px;
+
+    .navigation {
+
         flex-wrap: wrap;
-        justify-content: center;
+
+        gap:
+            10px 18px;
     }
 
-    .about {
-        grid-template-columns: 1fr;
+
+    .about-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 40px;
     }
 
-    .cards,
-    .contact {
-        grid-template-columns: 1fr 1fr;
+
+    .service-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
-    .service-card.featured {
+
+    .featured-service {
+
         transform: none;
     }
+
+
+    .contact-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .useful-links {
+
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
 }
 
 
-/* =========================
-   MOBILE
-========================= */
 
-@media (max-width: 600px) {
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
 
     .container {
+
         width: 92%;
     }
 
-    .navbar {
-        gap: 12px;
-    }
 
     .brand img {
-        width: 52px;
-        height: 52px;
+
+        width: 54px;
+
+        height: 54px;
     }
 
-    .brand h2 {
-        font-size: 0.95rem;
+
+    .brand-info strong {
+
+        font-size: 0.9rem;
     }
 
-    nav {
-        gap: 8px 14px;
+
+    .brand-info span {
+
+        font-size: 0.7rem;
     }
 
-    nav a {
-        font-size: 0.82rem;
+
+    .navigation {
+
+        gap:
+            7px 12px;
     }
 
-    .hero {
-        min-height: 560px;
-    }
 
-    .hero h1 {
-        font-size: 2.35rem;
-    }
+    .navigation a {
 
-    .hero-description {
-        font-size: 1rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero-buttons .btn {
-        width: 220px;
-    }
-
-    .section {
-        padding: 65px 0;
-    }
-
-    .section-title {
-        margin-bottom: 35px;
-    }
-
-    .about-card {
-        padding: 35px 20px;
-    }
-
-    .cards,
-    .contact {
-        grid-template-columns: 1fr;
-    }
-
-    .service-card.featured {
-        transform: none;
-    }
-
-    .pastor {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 20px;
-    }
-
-    .pastor-icon {
-        min-width: 100px;
-        width: 100px;
-        height: 100px;
-    }
-
-    .verse {
-        padding: 65px 0;
-    }
-
-    .verse h2 {
-        font-size: 1.4rem;
-    }
-
-    .footer-links {
-        gap: 12px 18px;
-    }
-
-    .whatsapp {
-        width: 52px;
-        height: 52px;
-        right: 16px;
-        bottom: 16px;
-    }
-}
-
-
-/* =========================
-   VERY SMALL MOBILE
-========================= */
-
-@media (max-width: 380px) {
-
-    .brand-text {
-        display: none;
-    }
-
-    nav a {
         font-size: 0.78rem;
     }
 
-    .hero h1 {
-        font-size: 2rem;
-    }
 
     .hero {
-        min-height: 520px;
+
+        min-height: 650px;
     }
+
+
+    .hero-logo {
+
+        width: 95px;
+
+        height: 95px;
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            2.35rem;
+    }
+
+
+    .hero-subtitle {
+
+        font-size:
+            0.95rem;
+    }
+
+
+    .hero-buttons {
+
+        flex-direction:
+            column;
+
+        align-items:
+            center;
+    }
+
+
+    .hero-buttons .btn {
+
+        width:
+            230px;
+
+        text-align:
+            center;
+    }
+
+
+    .section {
+
+        padding:
+            70px 0;
+    }
+
+
+    .section-title {
+
+        margin-bottom:
+            38px;
+    }
+
+
+    .service-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .service-card {
+
+        padding:
+            35px 20px;
+    }
+
+
+    .pastor-card {
+
+        flex-direction:
+            column;
+
+        text-align:
+            center;
+
+        padding:
+            35px 22px;
+    }
+
+
+    .pastor-symbol {
+
+        flex:
+            0 0 105px;
+
+        width:
+            105px;
+
+        height:
+            105px;
+    }
+
+
+    .pastor-details h2 {
+
+        font-size:
+            1.7rem;
+    }
+
+
+    .location-card {
+
+        flex-direction:
+            column;
+
+        text-align:
+            center;
+    }
+
+
+    .location-btn {
+
+        margin:
+            10px 0 0;
+    }
+
+
+    .contact-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .useful-links {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .bible-buttons {
+
+        flex-direction:
+            column;
+    }
+
+
+    .bible-btn {
+
+        width:
+            100%;
+
+        text-align:
+            center;
+    }
+
+
+    .floating-whatsapp {
+
+        width:
+            54px;
+
+        height:
+            54px;
+
+        right:
+            16px;
+
+        bottom:
+            16px;
+    }
+
+}
+
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 390px) {
+
+
+    .brand-info {
+
+        display:
+            none;
+    }
+
+
+    .navigation a {
+
+        font-size:
+            0.73rem;
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            2rem;
+    }
+
+
+    .hero-label {
+
+        font-size:
+            0.68rem;
+
+        letter-spacing:
+            2px;
+    }
+
+
+    .useful-links {
+
+        grid-template-columns:
+            1fr;
+    }
+
 }
