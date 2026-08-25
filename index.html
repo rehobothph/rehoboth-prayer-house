@@ -451,33 +451,13 @@
     </div>
 </footer>
 
-<!-- FLOATING WHATSAPP -->
+<!-- FLOATING WHATSAPP BUTTON -->
 <a href="https://wa.me/917353609920" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="WhatsApp">
     💬
 </a>
 
-<!-- SCRIPT FOR PRAYER FORM TO WHATSAPP -->
-<script>
-function sendToWhatsApp(event) {
-    event.preventDefault();
-    
-    var name = document.getElementById('name').value;
-    var phone = document.getElementById('phone').value;
-    var place = document.getElementById('place').value;
-    var message = document.getElementById('message').value;
-
-    var whatsappText = "🙏 *PRAYER REQUEST / CONTACT FORM*%0A%0A" +
-                       "👤 *ಹೆಸರು:* " + encodeURIComponent(name) + "%0A" +
-                       "📞 *ಫೋನ್:* " + encodeURIComponent(phone) + "%0A" +
-                       "📍 *ಸ್ಥಳ:* " + encodeURIComponent(place) + "%0A%0A" +
-                       "📝 *ಪ್ರಾರ್ಥನಾ ವಿನಂತಿ:*%0A" + encodeURIComponent(message);
-
-    var whatsappURL = "https://wa.me/917353609920?text=" + whatsappText;
-    
-    window.open(whatsappURL, '_blank');
-}
-</script>
-
+<!-- SCRIPT FILE LINK -->
 <script src="script.js"></script>
+
 </body>
 </html>
