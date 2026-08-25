@@ -21,6 +21,49 @@
     <link rel="stylesheet"
           href="style.css">
 
+    <!-- LANGUAGE DROPDOWN CSS -->
+    <style>
+        .lang-dropdown { 
+            position: relative; 
+            display: inline-block; 
+            margin-left: 10px; 
+        }
+        .lang-dropbtn { 
+            background-color: #f0a500; 
+            color: #123f42; 
+            padding: 7px 15px; 
+            font-weight: bold; 
+            border: none; 
+            border-radius: 20px; 
+            cursor: pointer; 
+        }
+        .lang-dropdown-content { 
+            display: none; 
+            position: absolute; 
+            right: 0; 
+            background-color: #ffffff; 
+            min-width: 140px; 
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2); 
+            z-index: 100; 
+            border-radius: 8px; 
+            overflow: hidden; 
+        }
+        .lang-dropdown-content a { 
+            color: #123f42 !important; 
+            padding: 10px 16px; 
+            text-decoration: none; 
+            display: block; 
+            font-size: 14px; 
+            text-align: left; 
+        }
+        .lang-dropdown-content a:hover { 
+            background-color: #f1f1f1; 
+        }
+        .lang-dropdown:hover .lang-dropdown-content { 
+            display: block; 
+        }
+    </style>
+
 </head>
 
 
@@ -90,8 +133,18 @@
                 ಸಂಪರ್ಕ
             </a>
 
-            <!-- LANGUAGE TOGGLE BUTTON -->
-            <div id="google_translate_element" style="display: inline-block; vertical-align: middle; margin-left: 10px;"></div>
+            <!-- LANGUAGE DROPDOWN -->
+            <div class="lang-dropdown">
+                <button class="lang-dropbtn">🌐 Language ▼</button>
+                <div class="lang-dropdown-content">
+                    <a href="index.html">ಕನ್ನಡ</a>
+                    <a href="en.html">English</a>
+                    <a href="Hi.html">हिन्दी</a>
+                    <a href="ta.html">தமிழ்</a>
+                    <a href="te.html">తెలుగు</a>
+                    <a href="ml.html">മലയാളം</a>
+                </div>
+            </div>
 
         </nav>
 
@@ -1225,22 +1278,6 @@
     💬
 
 </a>
-
-
-<!-- =====================================================
-     GOOGLE TRANSLATE SCRIPT
-===================================================== -->
-
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'kn', 
-    includedLanguages: 'kn,en', 
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-  }, 'google_translate_element');
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
