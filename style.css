@@ -1,5 +1,5 @@
 /* =====================================================
-   REHOBOTH PRAYER HOUSE - ULTRA PROFESSIONAL STYLES
+   REHOBOTH PRAYER HOUSE - PREMIUM & PROFESSIONAL STYLES
    ===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -129,12 +129,15 @@ body {
     gap: 12px;
 }
 
+/* --- Header Brand Logo --- */
 .brand img {
     width: 48px;
     height: 48px;
     border-radius: 50%;
     border: 2px solid var(--accent-gold);
     object-fit: cover;
+    transform: scale(1.35); /* ಕಪ್ಪು ಹಿನ್ನೆಲೆಯನ್ನು ಕ್ರಾಪ್ ಮಾಡಿ ಲೋಗೋ ಜೂಮ್ ಮಾಡುತ್ತದೆ */
+    overflow: hidden;
 }
 
 .brand-info strong {
@@ -189,7 +192,7 @@ body {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle at center, rgba(240, 165, 0, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle at center, rgba(240, 165, 0, 0.12) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -200,13 +203,24 @@ body {
     z-index: 2;
 }
 
+.hero-logo {
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+/* --- Hero Section Logo --- */
 .hero-logo img {
-    width: 90px;
-    height: 90px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     border: 3px solid var(--accent-gold);
     box-shadow: 0 0 25px rgba(240, 165, 0, 0.3);
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    object-fit: cover;
+    transform: scale(1.35); /* ಕಪ್ಪು ಹಿನ್ನೆಲೆ ಮರೆಯಾಗುತ್ತದೆ */
+    display: block;
 }
 
 .hero-label {
@@ -885,12 +899,16 @@ body {
     text-align: center;
 }
 
+/* --- Footer Logo --- */
 .footer-logo {
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     border: 2px solid var(--accent-gold);
     margin-bottom: 15px;
+    object-fit: cover;
+    transform: scale(1.35); /* ಕಪ್ಪು ಹಿನ್ನೆಲೆ ಮರೆಯಾಗುತ್ತದೆ */
+    overflow: hidden;
 }
 
 .footer h2 {
