@@ -248,28 +248,34 @@ ul {
 }
 
 /* =====================================================
-   ABOUT
-===================================================== -->
+   ABOUT (UPDATED FOR PROFESSIONAL LOOK)
+===================================================== */
 .about-grid {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     gap: 40px;
     align-items: center;
+    margin-top: 20px;
 }
 
 .about-content p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    line-height: 1.8;
     color: var(--text-muted);
     margin-bottom: 18px;
 }
 
 .faith-box {
-    display: flex;
-    gap: 15px;
+    display: inline-flex;
     align-items: center;
-    margin-top: 25px;
-    color: var(--primary-color);
+    gap: 12px;
+    background: var(--bg-light);
+    border-left: 4px solid var(--gold-color);
+    padding: 12px 20px;
     font-weight: 700;
+    color: var(--primary-color);
+    border-radius: 4px;
+    margin-top: 10px;
 }
 
 .faith-box span {
@@ -277,17 +283,19 @@ ul {
 }
 
 .est-card {
-    background: linear-gradient(145deg, #123f42, #1b5a5e);
+    background: linear-gradient(135deg, #123f42 0%, #082123 100%);
     color: var(--white);
     padding: 40px 30px;
     border-radius: 16px;
     text-align: center;
     box-shadow: var(--shadow);
+    border: 1px solid rgba(212, 175, 55, 0.3);
     transition: var(--transition);
 }
 
 .est-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
 .est-cross {
@@ -296,11 +304,30 @@ ul {
     margin-bottom: 10px;
 }
 
+.est-card h3 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    color: var(--white);
+}
+
+.est-card p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-style: italic;
+}
+
 .est-line {
     height: 2px;
-    width: 50px;
+    width: 60px;
     background-color: var(--gold-color);
-    margin: 15px auto;
+    margin: 18px auto;
+}
+
+.est-card strong {
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    color: var(--gold-color);
 }
 
 /* =====================================================
@@ -316,7 +343,7 @@ ul {
     background: var(--white);
     padding: 30px;
     border-radius: 12px;
-    border: 1fr solid var(--border-color);
+    border: 1px solid var(--border-color);
     box-shadow: var(--shadow);
     text-align: center;
     transition: var(--transition);
@@ -784,113 +811,76 @@ ul {
         font-size: 2.1rem;
     }
 }
-/* Scroll Animation */
 
-.hidden{
-opacity:0;
-transform:translateY(40px);
-transition:all .8s ease;
+/* Scroll Animation */
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all .8s ease;
 }
 
-.show{
-opacity:1;
-transform:translateY(0);
+.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Header */
-
-.header-scroll{
-background:#082123;
-backdrop-filter:blur(15px);
-box-shadow:0 10px 25px rgba(0,0,0,.25);
+.header-scroll {
+    background: #082123;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.25);
 }
 
 /* Active Menu */
-
-.navigation a.active{
-color:#d4af37;
+.navigation a.active {
+    color: #d4af37;
 }
 
 /* Back To Top */
-
-.backToTop{
-
-position:fixed;
-
-right:25px;
-
-bottom:90px;
-
-width:50px;
-
-height:50px;
-
-border:none;
-
-border-radius:50%;
-
-background:#d4af37;
-
-color:#000;
-
-font-size:22px;
-
-cursor:pointer;
-
-opacity:0;
-
-visibility:hidden;
-
-transition:.4s;
-
-z-index:9999;
-
+.backToTop {
+    position: fixed;
+    right: 25px;
+    bottom: 90px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: #d4af37;
+    color: #000;
+    font-size: 22px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+    z-index: 9999;
 }
 
-.showTop{
-
-opacity:1;
-
-visibility:visible;
-
+.showTop {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Ripple */
-
 .btn,
 .online-btn,
 .email-btn,
 .location-btn,
-.form-submit-btn{
-
-position:relative;
-
-overflow:hidden;
-
+.form-submit-btn {
+    position: relative;
+    overflow: hidden;
 }
 
-.ripple{
-
-position:absolute;
-
-border-radius:50%;
-
-transform:scale(0);
-
-background:rgba(255,255,255,.5);
-
-animation:ripple .6s linear;
-
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    background: rgba(255,255,255,.5);
+    animation: ripple .6s linear;
 }
 
-@keyframes ripple{
-
-to{
-
-transform:scale(4);
-
-opacity:0;
-
-}
-
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
 }
