@@ -90,6 +90,9 @@
                 ಸಂಪರ್ಕ
             </a>
 
+            <!-- LANGUAGE TOGGLE BUTTON -->
+            <div id="google_translate_element" style="display: inline-block; vertical-align: middle; margin-left: 10px;"></div>
+
         </nav>
 
     </div>
@@ -1223,6 +1226,21 @@
 
 </a>
 
+
+<!-- =====================================================
+     GOOGLE TRANSLATE SCRIPT
+===================================================== -->
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'kn', 
+    includedLanguages: 'kn,en', 
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
