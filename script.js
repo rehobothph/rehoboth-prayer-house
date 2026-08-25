@@ -6,20 +6,23 @@
 function sendToWhatsApp(event) {
     event.preventDefault();
 
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const place = document.getElementById('place').value;
-    const message = document.getElementById('message').value;
+    const name = document.getElementById('name') ? document.getElementById('name').value : '';
+    const phone = document.getElementById('phone') ? document.getElementById('phone').value : '';
+    const place = document.getElementById('place') ? document.getElementById('place').value : '';
+    const message = document.getElementById('message') ? document.getElementById('message').value : '';
 
-    const whatsappText = "🙏 *PRAYER REQUEST / CONTACT FORM*%0A%0A" +
-                       "👤 *ಹೆಸರು:* " + encodeURIComponent(name) + "%0A" +
-                       "📞 *ಫೋನ್:* " + encodeURIComponent(phone) + "%0A" +
-                       "📍 *ಸ್ಥಳ:* " + encodeURIComponent(place) + "%0A%0A" +
-                       "📝 *ಪ್ರಾರ್ಥನಾ ವಿನಂತಿ:*%0A" + encodeURIComponent(message);
+    const phoneNumber = "917353609920";
 
-    const whatsappURL = "https://wa.me/917353609920?text=" + whatsappText;
+    let text = `🙏 *NEW PRAYER REQUEST*\n\n`;
+    text += `👤 *ಹೆಸರು:* ${name}\n`;
+    if (phone) text += `📞 *ಫೋನ್:* ${phone}\n`;
+    if (place) text += `📍 *ಸ್ಥಳ:* ${place}\n`;
+    text += `\n📝 *ಪ್ರಾರ್ಥನಾ ವಿನಂತಿ:*\n${message}`;
 
-    window.open(whatsappURL, '_blank');
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+
+    window.open(whatsappUrl, '_blank');
 }
 
 // 2. DOM CONTENT LOADED EVENTS
@@ -30,11 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Sticky Header
     const header = document.querySelector(".header");
-    if(header){
+    if (header) {
         window.addEventListener("scroll", () => {
-            if(window.scrollY > 60){
+            if (window.scrollY > 60) {
                 header.classList.add("header-scroll");
-            }else{
+            } else {
                 header.classList.remove("header-scroll");
             }
         });
@@ -42,12 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(link => {
-        link.addEventListener("click", function(e){
+        link.addEventListener("click", function (e) {
             const href = this.getAttribute("href");
-            if(href === "#") return;
+            if (href === "#") return;
 
             const target = document.querySelector(href);
-            if(target){
+            if (target) {
                 e.preventDefault();
                 target.scrollIntoView({
                     behavior: "smooth"
@@ -65,14 +68,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         sections.forEach(section => {
             const top = section.offsetTop - 150;
-            if(window.scrollY >= top){
+            if (window.scrollY >= top) {
                 current = section.getAttribute("id");
             }
         });
 
         navLinks.forEach(link => {
             link.classList.remove("active");
-            if(link.getAttribute("href") === "#" + current){
+            if (link.getAttribute("href") === "#" + current) {
                 link.classList.add("active");
             }
         });
@@ -81,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Scroll Animation (IntersectionObserver)
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            if(entry.isIntersecting){
+            if (entry.isIntersecting) {
                 entry.target.classList.add("show");
             }
         });
@@ -90,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.querySelectorAll(
-        ".section, .service-card, .contact-card, .about-grid, .pastor-card, .word-card, .online-card, .email-card, .location-card"
+        ".section, .service-card, .contact-card, .about-grid, .pastor-card, .word-card, .online-card, .email-card, .location-card, .gallery-item"
     ).forEach(item => {
         item.classList.add("hidden");
         observer.observe(item);
@@ -98,9 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Button Ripple Effect
     document.querySelectorAll(
-        ".btn, .online-btn, .email-btn, .location-btn, .form-submit-btn"
+        ".btn, .online-btn, .email-btn, .location-btn, .form-submit-btn, .bible-btn, .request-btn"
     ).forEach(button => {
-        button.addEventListener("click", function(e){
+        button.addEventListener("click", function (e) {
             const ripple = document.createElement("span");
             const rect = this.getBoundingClientRect();
 
@@ -127,9 +130,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(topButton);
 
     window.addEventListener("scroll", () => {
-        if(window.scrollY > 400){
+        if (window.scrollY > 400) {
             topButton.classList.add("showTop");
-        }else{
+        } else {
             topButton.classList.remove("showTop");
         }
     });
