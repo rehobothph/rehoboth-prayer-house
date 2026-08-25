@@ -9,6 +9,11 @@
 
     <title>Rehoboth Prayer House | ಮಾದಾಪುರ</title>
 
+    <!-- GOOGLE FONTS (Noto Sans Kannada) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -263,44 +268,54 @@
 </section>
 
 <!-- =====================================================
-     PRAYER REQUEST
+     PRAYER REQUEST & CONTACT FORM
 ===================================================== -->
 <section id="prayer-request" class="prayer-request-section">
     <div class="container">
         <div class="section-title prayer-title">
             <span>WE PRAY FOR YOU</span>
-            <h2>Prayer Request</h2>
+            <h2>Prayer Request & Contact Form</h2>
             <div class="title-line"></div>
-            <p>ನಿಮ್ಮ ಪ್ರಾರ್ಥನಾ ವಿನಂತಿಯನ್ನು ನಮಗೆ ತಿಳಿಸಿ.</p>
+            <p>ನಿಮ್ಮ ಪ್ರಾರ್ಥನಾ ವಿನಂತಿಯನ್ನು ಇಲ್ಲಿ ಸಲ್ಲಿಸಿ, ನಾವು ನಿಮಗಾಗಿ ಪ್ರಾರ್ಥಿಸುತ್ತೇವೆ.</p>
         </div>
 
-        <div class="prayer-request-card">
-            <div class="prayer-request-icon">🙏</div>
-            <h2>ನಿಮ್ಮಿಗಾಗಿ ನಾವು ಪ್ರಾರ್ಥಿಸುತ್ತೇವೆ</h2>
-            <p>
-                ನಿಮ್ಮ ಜೀವನದಲ್ಲಿ ಯಾವುದೇ ಪ್ರಾರ್ಥನಾ ಅಗತ್ಯವಿದ್ದರೆ, ಕೆಳಗಿನ ಮೂಲಕ Pastor ಅವರಿಗೆ ನೇರವಾಗಿ ನಿಮ್ಮ Prayer Request ಕಳುಹಿಸಬಹುದು.
-            </p>
+        <div class="prayer-form-container">
+            <form id="prayerForm" onsubmit="sendToWhatsApp(event)">
+                <div class="form-group">
+                    <label for="name">ನಿಮ್ಮ ಹೆಸರು (Name) *</label>
+                    <input type="text" id="name" required placeholder="ನಿಮ್ಮ ಹೆಸರು ಬರೆಯಿರಿ">
+                </div>
 
-            <div class="request-buttons">
-                <!-- WHATSAPP -->
-                <a href="https://wa.me/917353609920?text=%F0%9F%99%8F%20Prayer%20Request%0A%0A%E0%B2%A8%E0%B2%82%E0%B2%A8%20%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%BE%E0%B2%B0%E0%B3%8D%E0%B2%A5%E0%B2%A8%E0%B2%BE%20%E0%B2%B5%E0%B2%BF%E0%B2%A8%E0%B2%82%E0%B2%A4%E0%B2%BF%3A%0A"
-                   target="_blank" rel="noopener noreferrer" class="request-btn whatsapp-request">
-                    💬 WhatsApp ಮೂಲಕ Prayer Request ಕಳುಹಿಸಿ
-                </a>
+                <div class="form-group">
+                    <label for="phone">ಫೋನ್ ಸಂಖ್ಯೆ (Phone Number)</label>
+                    <input type="tel" id="phone" placeholder="ನಿಮ್ಮ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ">
+                </div>
 
-                <!-- SMS -->
-                <a href="sms:+917353609920?body=Prayer%20Request%3A%20" class="request-btn sms-request">
-                    📱 SMS ಮೂಲಕ Prayer Request ಕಳುಹಿಸಿ
-                </a>
+                <div class="form-group">
+                    <label for="place">ಸ್ಥಳ (Location)</label>
+                    <input type="text" id="place" placeholder="ಉದಾ: ಮಾದಾಪುರ, ಮೈಸೂರು">
+                </div>
 
-                <!-- CALL -->
-                <a href="tel:+917353609920" class="request-btn call-request">
-                    📞 Pastorಗೆ ಕರೆ ಮಾಡಿ
-                </a>
+                <div class="form-group">
+                    <label for="message">ಪ್ರಾರ್ಥನಾ ವಿಷಯ / Prayer Request *</label>
+                    <textarea id="message" rows="4" required placeholder="ನಿಮ್ಮ ಪ್ರಾರ್ಥನಾ ವಿನಂತಿಯನ್ನು ವಿವರವಾಗಿ ಬರೆಯಿರಿ..."></textarea>
+                </div>
+
+                <button type="submit" class="form-submit-btn">
+                    🙏 WhatsApp ಮೂಲಕ Prayer Request ಕಳುಹಿಸಿ
+                </button>
+            </form>
+
+            <div class="alternative-contact">
+                <p>ಅಥವಾ ನೇರವಾಗಿ ಸಂಪರ್ಕಿಸಿ:</p>
+                <div class="alt-buttons">
+                    <a href="sms:+917353609920?body=Prayer%20Request%3A%20" class="request-btn sms-request">📱 SMS</a>
+                    <a href="tel:+917353609920" class="request-btn call-request">📞 Call Pastor</a>
+                </div>
             </div>
 
             <div class="private-note">
-                🔒 ನಿಮ್ಮ Prayer Request ಅನ್ನು ಗೌಪ್ಯವಾಗಿ Pastor ಅವರಿಗೆ ಕಳುಹಿಸಬಹುದು.
+                🔒 ನಿಮ್ಮ ಪ್ರಾರ್ಥನಾ ವಿಷಯಗಳನ್ನು ಅತ್ಯಂತ ಗೌಪ್ಯವಾಗಿ ಇಡಲಾಗುತ್ತದೆ.
             </div>
         </div>
     </div>
@@ -446,12 +461,32 @@
     </div>
 </footer>
 
-<!-- =====================================================
-     FLOATING WHATSAPP
-===================================================== -->
+<!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/917353609920" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="WhatsApp">
     💬
 </a>
+
+<!-- SCRIPT FOR PRAYER FORM TO WHATSAPP -->
+<script>
+function sendToWhatsApp(event) {
+    event.preventDefault();
+    
+    var name = document.getElementById('name').value;
+    var phone = document.getElementById('phone').value;
+    var place = document.getElementById('place').value;
+    var message = document.getElementById('message').value;
+
+    var whatsappText = "🙏 *PRAYER REQUEST / CONTACT FORM*%0A%0A" +
+                       "👤 *ಹೆಸರು:* " + encodeURIComponent(name) + "%0A" +
+                       "📞 *ಫೋನ್:* " + encodeURIComponent(phone) + "%0A" +
+                       "📍 *ಸ್ಥಳ:* " + encodeURIComponent(place) + "%0A%0A" +
+                       "📝 *ಪ್ರಾರ್ಥನಾ ವಿನಂತಿ:*%0A" + encodeURIComponent(message);
+
+    var whatsappURL = "https://wa.me/917353609920?text=" + whatsappText;
+    
+    window.open(whatsappURL, '_blank');
+}
+</script>
 
 </body>
 </html>
