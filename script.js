@@ -6,10 +6,15 @@
 function sendToWhatsApp(event) {
     event.preventDefault();
 
-    const name = document.getElementById('name') ? document.getElementById('name').value : '';
-    const phone = document.getElementById('phone') ? document.getElementById('phone').value : '';
-    const place = document.getElementById('place') ? document.getElementById('place').value : '';
-    const message = document.getElementById('message') ? document.getElementById('message').value : '';
+    const name = document.getElementById('name') ? document.getElementById('name').value.trim() : '';
+    const phone = document.getElementById('phone') ? document.getElementById('phone').value.trim() : '';
+    const place = document.getElementById('place') ? document.getElementById('place').value.trim() : '';
+    const message = document.getElementById('message') ? document.getElementById('message').value.trim() : '';
+
+    if (!name || !message) {
+        alert("ದಯವಿಟ್ಟು ನಿಮ್ಮ ಹೆಸರು ಮತ್ತು ಪ್ರಾರ್ಥನಾ ವಿಷಯವನ್ನು ನಮೂದಿಸಿ.");
+        return;
+    }
 
     const phoneNumber = "917353609920";
 
@@ -43,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Smooth Scroll
+    // Smooth Scroll & Auto Close Mobile Menu
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener("click", function (e) {
             const href = this.getAttribute("href");
@@ -55,6 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 target.scrollIntoView({
                     behavior: "smooth"
                 });
+
+                // Close mobile menu after clicking a link
+                const nav = document.querySelector(".navigation");
+                if (nav && nav.classList.contains("nav-active")) {
+                    nav.classList.remove("nav-active");
+                }
             }
         });
     });
@@ -127,6 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const topButton = document.createElement("button");
     topButton.innerHTML = "↑";
     topButton.className = "backToTop";
+    topButton.setAttribute("aria-label", "Scroll to top");
     document.body.appendChild(topButton);
 
     window.addEventListener("scroll", () => {
