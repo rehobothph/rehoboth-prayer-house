@@ -9,6 +9,10 @@
 
     <title>Rehoboth Prayer House | ಮಾದಾಪುರ</title>
 
+    <!-- FAVICON / HD LOGO ICONS -->
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="logo.jpg">
+
     <!-- GOOGLE FONTS (Noto Sans Kannada) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,8 +20,14 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- CUSTOM LOGO STYLES (ಲೋಗೋ ಕ್ಲೀನ್ ಮತ್ತು ರೌಂಡ್ ಆಗಿ ಕಾಣಲು) -->
+    <!-- HD LOGO & OPTIMIZED STYLES -->
     <style>
+        /* Shared HD Rendering for Images */
+        img {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+
         /* Header Logo Styling */
         .brand img {
             width: 48px;
@@ -31,8 +41,8 @@
 
         /* Hero Section Logo Styling */
         .hero-logo img {
-            width: 110px;
-            height: 110px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #d4af37;
@@ -42,8 +52,8 @@
 
         /* Footer Logo Styling */
         .footer-logo {
-            width: 70px;
-            height: 70px;
+            width: 75px;
+            height: 75px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid #d4af37;
